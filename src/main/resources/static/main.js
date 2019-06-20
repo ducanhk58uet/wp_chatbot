@@ -54,7 +54,7 @@ function newMessage() {
         $("#chat-content").val('');
     }
 
-    $('<li class="sent"><img src="http://emilcarlsson.se/assets/mikeross.png" alt="" /><p>' + message + '</p></li>').appendTo($('.messages ul'));
+    $('<li class="me"><img src="http://emilcarlsson.se/assets/mikeross.png" alt="" /><p>' + message + '</p></li>').appendTo($('.messages ul'));
     $('.message-input input').val(null);
     $('.contact.active .preview').html('<span>You: </span>' + message);
     scrollDown();
@@ -95,7 +95,7 @@ function onSubscribeMessage() {
 function onMessageReceived(payload) {
     let message = JSON.parse(payload.body);
 
-    $('<li class="replies"><img src="http://emilcarlsson.se/assets/mikeross.png" alt="" /><p>' + message.content + '</p></li>').appendTo($('.messages ul'));
+    $('<li class="bot"><img src="http://emilcarlsson.se/assets/mikeross.png" alt="" /><p>' + message.content + '</p></li>').appendTo($('.messages ul'));
     $('.message-input input').val(null);
     $('.contact.active .preview').html('<span>Bot: </span>' + message.content);
 
